@@ -1,6 +1,6 @@
-import {Component, ViewEncapsulation, OnInit} from '@angular/core';
-import {Pizza} from "./pizza";
-import {PizzaRestService} from "./pizzaRest.service";
+import {Component, ViewEncapsulation, OnInit, Inject} from '@angular/core';
+import {Pizza} from "./domain/pizza";
+import {PIZZA_SERVICE, PizzaService} from "./service/pizza.service";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import {PizzaRestService} from "./pizzaRest.service";
 export class AppComponent implements OnInit {
   private pizzas: Pizza[];
 
-  constructor(private pizzaService: PizzaRestService) {
+  constructor(@Inject(PIZZA_SERVICE) private pizzaService: PizzaService) {
   }
 
   ngOnInit(): void {

@@ -4,10 +4,11 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {ReviewsComponent} from "./reviews.component";
-import {TabsComponent} from "./tabs.component";
-import {PizzaService} from "./pizza.service";
-import {PizzaRestService} from "./pizzaRest.service";
+import {ReviewsComponent} from "./components/reviews/reviews.component";
+import {TabsComponent} from "./components/tabs/tabs.component";
+import {PizzaRestService} from "./service/pizzaRest.service";
+import {PizzaFileService} from "./service/pizzaFile.service";
+import {PIZZA_SERVICE} from "./service/pizza.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import {PizzaRestService} from "./pizzaRest.service";
     FormsModule,
     HttpModule
   ],
-  providers: [PizzaService, PizzaRestService],
+  providers: [{provide: PIZZA_SERVICE, useClass: PizzaRestService}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

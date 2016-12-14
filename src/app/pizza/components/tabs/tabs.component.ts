@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Pizza} from './pizza';
+import {Pizza} from '../../domain/pizza';
 
 @Component({
   selector: 'tabs',
