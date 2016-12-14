@@ -1,5 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Inject} from '@angular/core';
 import {Pizza} from '../../domain/pizza';
+import {Review} from "../../domain/review";
+import {PIZZA_SERVICE, PizzaService} from "../../service/pizza.service";
 
 @Component({
   selector: 'tabs',
@@ -13,7 +15,7 @@ export class TabsComponent {
 
   private tab: number;
 
-  constructor() {
+  constructor(@Inject(PIZZA_SERVICE) private pizzaService: PizzaService) {
     this.tab = 1;
   }
 
@@ -23,5 +25,10 @@ export class TabsComponent {
 
   public isSelected(tid: number): boolean {
     return this.tab === tid;
+  }
+
+  public addReview(review: Review) {
+    this.pizzaService.addReview(this.pizza, review)
+      .then(() => this.pizza.reviews.push(review));
   }
 }

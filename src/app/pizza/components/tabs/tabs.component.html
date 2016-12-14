@@ -14,5 +14,5 @@
     <h4>Extras</h4>
     <blockquote>Not yet</blockquote>
   </div>
-  <reviews *ngIf="isSelected(3)" [reviews]="pizza.reviews"></reviews>
+  <reviews *ngIf="isSelected(3)" [reviews]="pizza.reviews" (addReview)="addReview($event)"></reviews>
 </div>

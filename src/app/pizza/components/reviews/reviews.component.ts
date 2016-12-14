@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {Review} from '../../domain/review';
 
 @Component({
@@ -10,6 +10,8 @@ export class ReviewsComponent {
 
   @Input()
   private reviews: Review[];
+  @Output()
+  private addReview = new EventEmitter<Review>();
 
   private newReview: Review;
 
@@ -19,7 +21,7 @@ export class ReviewsComponent {
 
   public onSubmit(){
     this.newReview.createdOn = new Date().getMilliseconds();
-    this.reviews.push(this.newReview);
+    this.addReview.emit(this.newReview);
     this.newReview = <Review>{};
   }
 }
