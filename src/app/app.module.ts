@@ -3,16 +3,18 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
-import {AppComponent} from './app.component';
-import {ReviewsComponent} from "./components/reviews/reviews.component";
-import {TabsComponent} from "./components/tabs/tabs.component";
-import {PizzaRestService} from "./service/pizzaRest.service";
-import {PizzaFileService} from "./service/pizzaFile.service";
-import {PIZZA_SERVICE} from "./service/pizza.service";
+import {ReviewsComponent} from "./pizza/components/reviews/reviews.component";
+import {TabsComponent} from "./pizza/components/tabs/tabs.component";
+import {PizzaRestService} from "./pizza/service/pizzaRest.service";
+import {PizzaFileService} from "./pizza/service/pizzaFile.service";
+import {PIZZA_SERVICE} from "./pizza/service/pizza.service";
+import {PizzaComponent} from "./pizza/pizza.component";
+import {AppComponent} from "./app.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    PizzaComponent,
     ReviewsComponent,
     TabsComponent
   ],

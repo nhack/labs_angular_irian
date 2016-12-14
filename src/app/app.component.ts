@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, OnInit, Inject} from '@angular/core';
-import {Pizza} from "./domain/pizza";
-import {PIZZA_SERVICE, PizzaService} from "./service/pizza.service";
+import {Pizza} from "./pizza/domain/pizza";
+import {PIZZA_SERVICE, PizzaService} from "./pizza/service/pizza.service";
 
 @Component({
   selector: 'app-root',
