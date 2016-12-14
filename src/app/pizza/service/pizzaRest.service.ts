@@ -27,6 +27,11 @@ export class PizzaRestService extends RestService implements PizzaService {
 
   getPizzas(): Promise<Pizza[]> {
     this._url = this._baseUrl;
+    return this.getData<Pizza[]>();
+  }
+
+  getPizza(id: string): Promise<Pizza> {
+    this._url = this._baseUrl + '/' + id;
     return this.getData<Pizza>();
   }
 

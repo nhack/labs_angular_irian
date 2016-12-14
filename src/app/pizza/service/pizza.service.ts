@@ -5,6 +5,7 @@ import {OpaqueToken} from '@angular/core';
 
 export interface PizzaService{
   getPizzas():Promise<Pizza[]>;
+  getPizza(id: string): Promise<Pizza>;
   addReview(pizza: Pizza, review: Review): Promise<Pizza>;
 }
 
