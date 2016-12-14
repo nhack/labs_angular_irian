@@ -10,20 +10,26 @@ import {PizzaFileService} from "./pizza/service/pizzaFile.service";
 import {PIZZA_SERVICE} from "./pizza/service/pizza.service";
 import {PizzaComponent} from "./pizza/pizza.component";
 import {AppComponent} from "./app.component";
+import {NavigationService} from "./common/navigation.service";
+import {RouterModule} from "@angular/router";
+import {ROUTES} from "./app.routes";
+import {PizzaListComponent} from "./pizza/pizzaList.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaComponent,
+    PizzaListComponent,
     ReviewsComponent,
     TabsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: PIZZA_SERVICE, useClass: PizzaRestService}],
+  providers: [{provide: PIZZA_SERVICE, useClass: PizzaRestService}, NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
