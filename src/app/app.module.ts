@@ -1,12 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {ReviewsComponent} from "./reviews.component";
 import {TabsComponent} from "./tabs.component";
 import {PizzaService} from "./pizza.service";
+import {PizzaRestService} from "./pizzaRest.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {PizzaService} from "./pizza.service";
     FormsModule,
     HttpModule
   ],
-  providers: [PizzaService],
+  providers: [PizzaService, PizzaRestService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
