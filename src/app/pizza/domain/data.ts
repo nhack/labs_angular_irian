@@ -2,10 +2,11 @@ import {Pizza} from './pizza';
 
 export var PIZZAS: Pizza[] = [
   {
+    _id: "1234",
     name: '4 STAGIONI',
     price: 27.5,
     weight: 550,
-    image: 'assets/quattro.png',
+    image: 'images/quattro.png',
     ingredients: 'sos rosii, mozzarella, ciuperci, salam, sunca presata, oregano, anghinare',
     canPurchase: true,
     soldOut: false,
@@ -22,10 +23,11 @@ export var PIZZAS: Pizza[] = [
       }]
   },
   {
+    _id: "1235",
     name: 'PEPPERONI',
     price: 25,
     weight: 450,
-    image: 'assets/pepperoni.png',
+    image: 'images/pepperoni.png',
     ingredients: 'sos rosii, mozzarella, salam picant, oregano',
     canPurchase: false,
     soldOut: false,

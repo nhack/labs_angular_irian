@@ -1,6 +1,7 @@
 import {Review} from './review';
 
 export interface Pizza{
+  _id: string,
   name: string,
   price: number,
   weight: number,
